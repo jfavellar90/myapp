@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from modulepage.views import myapp_blog as blog_page
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/', blog_page, name="blog_page")
 ]
