@@ -1,0 +1,17 @@
+machine:
+  python:
+    version: 2.7.6
+
+dependencies:
+  override:
+    - pip install -r requirements.txt
+
+test:
+  override:
+    # Run tests for the system.
+    # all-tests.sh is the entry point for determining
+    # which tests to run.
+    # See the circleCI documentation regarding parallelism
+    # to understand how multiple containers can be used to
+    # run subsets of tests in parallel.
+    - python manage.py test
